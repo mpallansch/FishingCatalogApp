@@ -1,0 +1,297 @@
+html {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    background-color: rgb(245, 245, 245);
+    font-family: "Roboto",UILanguageFont,Arial,sans-serif;
+}
+
+input {
+    margin: 10px;
+}
+
+.center-align {
+    text-align: center;
+}
+
+#app .page {
+    display: none;
+    //text-align: center;
+}
+
+#app #catalog-page {
+    display: block;
+}
+
+#loading-modal {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#loading-modal p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#loading-modal svg {
+    width: 50px;
+    height: 50px;
+    transform-origin: bottom right;
+    animation: rotating 1s linear infinite;
+    margin-right: 50px;
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.header, .footer, .content {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.header {
+    display: table;
+    background-color: lightblue;
+    height: 8%;
+    top: 0;
+    box-shadow: -1px 1px 10px darkgray;
+}
+
+.header .icon {
+    width: 50px;
+    padding: 0px 10px 0px 10px;
+}
+
+.header div {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.header div:nth-child(3) {
+    text-align: right;
+}
+
+.header h2 {
+    margin: 0;
+    color: white;    
+    margin-top: .1em;
+    height: 1.1em;
+    overflow-y: hidden;
+}
+.content {
+    height: 91%;
+    top: 9%;
+    overflow-y: auto;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content h2 {
+    padding-left: 10px;
+}
+
+.content p, .content label {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer {
+    display: table;
+    background-color: lightgray;
+    height: 10%;
+    bottom: 0;
+}
+
+.footer div {
+    display: table-cell;
+    vertical-align: middle;
+    width: 33%;
+}
+
+#image-enlarge-modal {
+    display: none;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#image-enlarge-modal div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#image-enlarge {
+    transform-origin: top left;
+    transition: transform 500ms linear;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.google-map {
+    position: relative;
+    width: 75%;
+    height: 400px;
+    left: 12.5%;
+}
+
+.delete-image-button {
+    position: relative;
+    float: left;
+    top: 40%;
+    left: 5%;
+    text-decoration: none;
+    color: red;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.fish-image {
+    position: relative;
+    width: 75%;
+    left: 12.5%;
+}
+
+.padding-bottom {
+    padding-bottom: 20px;
+}
+
+#home-page div {
+    margin: 30px;
+}
+
+#home-page a {
+    display: inline-block;
+    background-color: lightblue;
+    border: 2px solid black;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+#fish-listing {
+    list-style-type: none;
+    padding: 10px;
+}
+
+#image-list, #image-input-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.fish-entry {
+    margin-bottom: 15px;
+}
+
+.fish-entry .image-container {
+    display: table;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+}
+
+.fish-entry .image-container div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.fish-entry .image-container img {
+    max-width: 100%;
+    max-height: 65px;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fish-entry .content-container {
+    position: absolute;
+    width: 80%;
+    left: 20%;
+    top: 0;
+    height: 100%;
+    text-align: left;
+    padding: 5px;
+}
+
+.fish-entry a {
+    position: relative;
+    display: inline-block;
+    width: 95%;
+    height: 75px;
+    padding: 5px;
+    box-shadow: 0px 0px 5px 0px darkgray;
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+}
+
+.fish-entry span {
+    display: block;
+    padding: 2px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.fish-entry span:nth-child(1){
+    font-size: large;
+}
+
+#notes, #notes-input {
+    position: relative;
+    height: 150px;
+    width: 75%;
+    left: 12.5%;
+}
+
+#entry-form h2, #entry-info h2 {
+    text-decoration: underline;
+}
+
+.styled-button:hover, form input[type='button']:hover, form input[type='submit']:hover {
+    box-shadow: -1px 1px 10px darkgray;
+}
+
+.styled-button, form input[type='button'], form input[type='submit'] {
+    border: none !important;
+    background-color: lightgray !important;
+    text-decoration: none !important;
+    padding: 8px 25px !important;
+    border-radius: 2px !important;
+    font-weight: bold;
+    color: black !important;
+    box-shadow: -1px 1px 5px darkgray;
+}

@@ -1,0 +1,39 @@
+#############
+## Windows detritus
+#############
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac
+.DS_Store
+
+###########
+## Phonegap
+###########
+
+# iOS
+platforms/ios/build/
+platforms/ios/www/
+platforms/ios/cordova/console.log
+*.xcuserdatad
+
+# android
+platforms/android/assets/www
+platforms/android/build/generated
+platforms/android/build/intermediates
+platforms/android/build/outputs
+platforms/android/build/tmp
+platforms/android/.gradle/2.2.1
+platforms/android/CordovaLib/ant-build
+platforms/android/CordovaLib/ant-gen
+platforms/android/CordovaLib/bin
+platforms/android/CordovaLib/gen
+platforms/android/CordovaLib/local.properties

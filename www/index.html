@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://*.gstatic.com https://*.google.com https://*.googleapis.com 'unsafe-eval'; style-src 'self' https://*.google.com https://*.googleapis.com 'unsafe-inline'; media-src *; script-src 'self' https://*.google.com https://*.googleapis.com 'unsafe-inline' 'unsafe-eval'; img-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Fishing Catalog</title>
+    </head>
+    <body>
+        <div id="app" class="app">
+            <div id="catalog-page" class="page">
+                <div class="header">
+                    <div><a id="menu-modal" href="#"><img class="icon" src="img/menu.png" /></a></div>
+                    <div><h2>Your Catalog</h2></div>
+                    <div><a href="#new-entry-page"><img class="icon" src="img/plus.png" /></a></div>
+                </div>
+                <div class="content">
+                    <ul id="fish-listing">
+
+                    </ul>
+                </div>
+            </div>
+            <div id="entry-page" class="page">
+                <div class="header">
+                    <div><a href="#catalog-page"><img class="icon" src="img/back.png"/></a></div>
+                    <div><h2 id="entry-title"></h2></div>
+                    <div><a href="#" id="edit-button"><img class="icon" src="img/edit.png" /></a><a href="#" id="remove-button"><img class="icon" src="img/trash.png"/></a></div>
+                </div>
+                <div class="content">
+                    <div id="entry-info">
+                        <h2><strong>General</strong></h2>
+                        <p><strong>Title: </strong><span id="title"></span></p>
+                        <p><strong>Date: </strong><span id="date"></span></p>
+                        <p><strong>Type: </strong><span id="type"></span></p>
+                        <p><strong>Weight: </strong><span id="weight"></span></p>
+                        <p><strong>Size: </strong><span id="size"></span></p>
+                        <h2><strong>Location</strong></h2>
+                        <p><strong>Location Name: </strong><span id="location"></span></p>
+                        <p><strong>Coordinates: </strong><span id="coordinates"></span></p>
+                        <iframe id="entry-map" class="google-map" src=""></iframe><br><br>
+                        <div class="center-align">
+                            <a id="get-directions" class="styled-button" href="#">Get Directions</a>
+                        </div>
+                        <h2><strong>Images</strong></h2>
+                        <ul id="image-list"></ul>
+                        <h2><strong>Notes</strong></h2>
+                        <p><textarea id="notes" disabled></textarea></p>
+                    </div>
+                    <div id="edit-form-container"></div>
+                </div>
+            </div>
+            <div id="new-entry-page" class="page">
+                <div class="header">
+                    <div><a href="#catalog-page"><img class="icon" src="img/back.png" /></a></div>
+                    <div><h2>Add New Entry</h2></div>
+                </div>
+                <div class="content">
+                <p>Enter new fish information below:</p>
+                    <div id="new-form-container">
+                        <form id="entry-form">
+                            <h2><strong>General</strong></h2>
+                            <label for="title-input"><strong>Title:</strong></label>
+                            <input id="title-input" type="text"/><br>
+                            <label for="date-input"><strong>Date:</strong></label>
+                            <input id="date-input" type="date"/><br>
+                            <label for="type-input"><strong>Fish Type:</strong></label>
+                            <input id="type-input" type="text"/><br>
+                            <p>(<a target="_blank" class="link-in-app" href="https://www.google.com/#q=identify+my+fish">get help identifying your fish</a>)</p><br>
+                            <label for="weight-input"><strong>Weight:</strong></label>
+                            <input id="weight-input" type="text"/><br>
+                            <label for="size-input"><strong>Size:</strong></label>
+                            <input id="size-input" type="text"/><br>
+                            <h2><strong>Location</strong></h2>
+                            <label for="location-input"><strong>Location Name:</strong></label>
+                            <input id="location-input" type="text"/><br>
+                            <label for="latitude-input"><strong>Latitude:</strong></label>
+                            <input id="latitude-input" type="text"/><br>
+                            <label for="longitude-input"><strong>Longitude:</strong></label>
+                            <input id="longitude-input" type="text"/><br>
+                            <input id="zoom-input" type="hidden"/>
+                            <iframe id="input-map" class="google-map" src=""></iframe>
+                            <div class="center-align">
+                                <input id="use-gps" type="button" value="Get Location From GPS"/>
+                                <input id="use-map" type="button" value="Get Location From Map"/>
+                            </div><br>
+                            <h2><strong>Images</strong></h2>
+                            <div class="center-align">
+                                <input id="image-input" type="button" value="Add Saved Image" />
+                                <input id="image-capture" type="button" value="Capture Image" />
+                            </div>
+                            <ul id="image-input-list"></ul>
+                            <h2><strong>Notes</strong></h2>
+                            <textarea id="notes-input"></textarea><br>
+                            <input type="hidden" id="form-page" value="new" />
+                            <div class="padding-bottom center-align">
+                                <input type="button" id="form-cancel" value="Cancel" />
+                                <input type="submit" id="form-submit" value="Add Entry" />
+                            </div>
+                        </form>
+                    </div>
+                    <p id="form-success">Entry added successfully!</p>
+                </div>
+            </div>
+            <div id="settings-page" class="page">
+                <div class="header">
+                    <div><a href="#catalog-page"><img class="icon" src="img/back.png" /></a></div>
+                    <div><h2>Settings</h2></div>
+                </div>
+                <div class="content">
+                    <label>Sample Settings Toggle</label>
+                    <input type="checkbox" />
+                </div>
+                <div class="footer">
+                    <div><a href="#home-page">Home</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="loading-modal">
+            <p>
+                <svg>
+                    <circle cx="50" cy="50" r="45" fill="transparent" stroke="#000000" stroke-width="10px" />
+                </svg>
+            </p>
+        </div>
+        <div id="image-enlarge-modal">
+            <div><img src="" id="image-enlarge"/></div>
+        </div>
+        <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8Kt2igKzIU3RFhhnAaYsQgQuFT7nzEFE"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
